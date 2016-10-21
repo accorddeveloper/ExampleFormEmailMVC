@@ -1,8 +1,38 @@
-﻿
+﻿@model ExampleFormEmailMVC.Models.GenericFormModel
 @{
     ViewBag.Title = "GenericForm";
     Layout = "~/Views/Layouts/_LayoutBase.cshtml";
 }
 
-<h2>GenericForm</h2>
+<div class="container">
+    <div class="row">
+        @using (Html.BeginForm("GenericForm", "Index", FormMethod.Post))
+        {
+            <div class="col-xs-6">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ExampleName)
+                    @Html.EditorFor(m => m.ExampleName)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ExamplePhoneNumber)
+                    @Html.EditorFor(m => m.ExamplePhoneNumber)
+                </div>
+            </div>
+
+
+            <div class="col-xs-6">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ExampleAddress)
+                    @Html.EditorFor(m => m.ExampleAddress)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ExampleDate)
+                    @Html.EditorFor(m => m.ExampleDate)
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-lg"> Submit </button>
+      }
+    </div>
+</div>
 
