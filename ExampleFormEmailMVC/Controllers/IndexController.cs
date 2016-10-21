@@ -34,7 +34,7 @@ namespace ExampleFormEmailMVC.Controllers
             MailAddress from = new MailAddress("test");
             MailAddress to = new MailAddress("test");
             MailMessage message = new MailMessage(from, to);       
-            message.Body = [ model.ExampleAddress, model.ExampleDate, model.ExampleName, model.ExamplePhoneNumber];
+            //message.Body = [ model.ExampleAddress, model.ExampleDate, model.ExampleName, model.ExamplePhoneNumber];
 
             //To be completed at another time
             return View();
