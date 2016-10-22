@@ -22,6 +22,11 @@ namespace ExampleFormEmailMVC.App_Start
             bundles.Add(new ScriptBundle("~/bundles/tether",tetherCdnPath).Include("~/Scripts/tether/tether.js"));
             bundles.Add(new ScriptBundle("~/bundles/bootstrap", bootstrapCdnPath).Include("~/Scripts/bootstrap.js"));
 
+            var cssBootstrapCdnPath = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css";
+
+            // Include all CSS files in Bootstrap directory and all it's subdirectorites
+            bundles.Add(new StyleBundle("~/bundles/bootstrap", cssBootstrapCdnPath).IncludeDirectory("~/Content/CSS/Bootstrap", "*.css", true));
+
             BundleTable.EnableOptimizations = true;
         }
     }

@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Layouts/_LayoutBase.cshtml";
+}
+
+<div class="container">
+    <section id="FormTitle">
+        <h1 class="text-xs-center">
+            @ViewBag.FormTitle
+            <br />
+            <small class="text-xs-center text-muted">@ViewBag.FormSubtitle</small>
+        </h1>
+        <hr />
+    </section>
+
+    <div class="row">
+       @using (@Html.BeginForm())
+       {
+            @RenderBody()
+       }
+    </div>
+</div>
