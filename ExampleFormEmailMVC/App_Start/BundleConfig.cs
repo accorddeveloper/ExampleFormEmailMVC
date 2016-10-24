@@ -19,6 +19,7 @@ namespace ExampleFormEmailMVC.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/jquery", 
                 jqueryCdnPath).Include("~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include("~/Scripts/jquery.validate*"));
             bundles.Add(new ScriptBundle("~/bundles/tether",tetherCdnPath).Include("~/Scripts/tether/tether.js"));
             bundles.Add(new ScriptBundle("~/bundles/bootstrap", bootstrapCdnPath).Include("~/Scripts/bootstrap.js"));
 

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using ExampleFormEmailMVC.Models;
+using ExampleFormEmailMVC.Ultility;
 
 namespace ExampleFormEmailMVC.Controllers
 {
@@ -29,15 +30,13 @@ namespace ExampleFormEmailMVC.Controllers
         [Route("GenericForm")]
         public ActionResult GenericForm(GenericFormModel model)
         {
-            //Bad coding to put email component here, but putting it here for now
-            SmtpClient client = new SmtpClient();//Adding smtp host later
-            MailAddress from = new MailAddress("test");
-            MailAddress to = new MailAddress("test");
-            MailMessage message = new MailMessage(from, to);       
-            //message.Body = [ model.ExampleAddress, model.ExampleDate, model.ExampleName, model.ExamplePhoneNumber];
-
-            //To be completed at another time
-            return View();
+            if (ModelState.IsValid)
+            {
+                var json = new JavaScriptSerializer().Serialize(model);
+                //You will need to provide your email address and password to the smtp configuration in the root Web.config 
+                //Email.Send(json);
+            }
+            return View(model);
         }
 
     }

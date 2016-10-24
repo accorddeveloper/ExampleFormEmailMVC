@@ -6,28 +6,53 @@
     Layout = "~/Views/Layouts/_LayoutForm.cshtml";
 }
 
-<div class="col-xs-5  offset-sm-1">
-    <div class="form-group ">
-        @Html.LabelFor(m => m.ExampleName)
-        @Html.EditorFor(m => m.ExampleName)
-    </div>
+<div class="row">
+
+    <div class="col-xs-5  offset-xs-1">
+
+        <div class="form-group ">
+            @Html.LabelFor(m => m.ExampleName)
+            @Html.EditorFor(m => m.ExampleName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.ExampleName)
+        </div>
 
 
-    <div class="form-group">
-        @Html.LabelFor(m => m.ExamplePhoneNumber)
-        @Html.EditorFor(m => m.ExamplePhoneNumber)
+        <div class="form-group">
+            @Html.LabelFor(m => m.ExamplePhoneNumber)
+            @Html.EditorFor(m => m.ExamplePhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.ExamplePhoneNumber)
+        </div>
+
     </div>
+
+    <div class="col-xs-5 offset-sm-1">
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.ExampleAddress)
+            @Html.EditorFor(m => m.ExampleAddress, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.ExampleAddress)
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.ExampleDate)
+            @Html.EditorFor(m => m.ExampleDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(m => m.ExampleDate)
+        </div>
+
+    </div>
+
 </div>
 
-<div class="col-xs-5 offset-sm-1 float-xs-right">
-    <div class="form-group">
-        @Html.LabelFor(m => m.ExampleAddress)
-        @Html.EditorFor(m => m.ExampleAddress)
+<div class="row">
+
+    <div class="col-xs-5 offset-xs-1 ">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"> Submit </button>
+        </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ExampleDate)
-        @Html.EditorFor(m => m.ExampleDate)
-    </div>
+
 </div>
 
-<button type="submit" class="btn btn-primary btn-lg"> Submit </button>
+
+
